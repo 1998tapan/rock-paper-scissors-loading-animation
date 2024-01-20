@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+    --primary-color: rebeccapurple;
+    --secondary-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+}
+
+.load-screen,
+.final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;
+}
+
+.load-screen {
+    color: var(--secondary-color);
+    font-size: 50px;
+}
+
+.load-screen.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 0.2s ease-out;
+}
+
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.final {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.final.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: enter 0.5s ease-out;
+}
+
+.load-elements {
+    position: relative;
+    overflow: hidden;
+    font-size: 50px;
+    height: 100px;
+    width: 1000px;
+}
+
+.load-screen span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-transform: uppercase;
+}
+
+span.enter {
+    transform: translate(-50%, -50%) scale(1);
+    animation: enter 0.5s ease-in-out;
+}
+
+span.exit {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 0.5s ease-in-out;
+}
+
+@keyframes enter {
+    0% {
+        transform: translate(-50%, -50%) scale(1.8);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+#play {
+    border: 0;
+    color: var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 20px;
+    outline: 0;
+    background: #fff;
+    text-transform: uppercase;
+    box-shadow: 0px 16px 20px rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#play:active {
+    animation: click 0.2s ease-in-out;
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.67);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#dev {
+    font-family: "Montserrat", sans-serif;
+    position: fixed;
+    font-size: 14px;
+    top: 10px;
+    left: 10px;
+    padding: 1em;
+    color: #383838;
+    background-color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#dev a {
+    /*   text-decoration: none; */
+    font-weight: bold;
+    color: #383838;
+    transition: ease all 0.3s;
+}
+
+#dev a:hover {
+    color: #ef5350;
+    text-decoration: underline;
+}
+
+#dev span {
+    display: inline-block;
+    transition: ease all 0.3s;
+    color: pink;
+}
+
+#dev span:hover {
+    transform: scale(1.2);
+}
